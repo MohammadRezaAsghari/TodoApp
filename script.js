@@ -19,16 +19,16 @@ document.querySelector('#search').addEventListener('input', function(event) {
 });
 
 document.querySelector('#todoForm').addEventListener('submit', function(e) {
+    let identifier = uuidv4();
     e.preventDefault();
-    console.log(e);
     todo.push({
-        id: uuidv4(),
+        id: identifier,
         body: e.target.elements.firstName.value,
         done: false
     })
     saveNote(todo);
     e.target.elements.firstName.value = '';
-    renderTodos(todo, filter);
+    location.assign(`/edit.html#${identifier}`);
 });
 document.querySelector('#hideCompleted').addEventListener('change', function(e) {
     filter.hideCompleted = e.target.checked;

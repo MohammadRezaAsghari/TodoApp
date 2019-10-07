@@ -30,7 +30,8 @@ let removeTodo = function(id) {
 //createElement
 const createElementDOM = function(item) {
     let div = document.createElement('div');
-    let span = document.createElement('span');
+    let link = document.createElement('a');
+
     let button = document.createElement('button');
 
     //creating and attaching eventListener to checkbox
@@ -50,13 +51,15 @@ const createElementDOM = function(item) {
 
     //writing content in span
     if (item.body.length > 0) {
-        span.textContent = item.body;
+        link.textContent = item.body;
     } else {
-        span.textContent = 'Unnamed Note'
+        link.textContent = 'Unnamed Note'
     }
 
+    // 
+    link.setAttribute('href', `/edit.js#${item.id}`);
     //appending span
-    div.appendChild(span);
+    div.appendChild(link);
 
     //appending button and it's value
     div.appendChild(button);
