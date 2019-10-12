@@ -57,7 +57,7 @@ const createElementDOM = function(item) {
     }
 
     // 
-    link.setAttribute('href', `/edit.js#${item.id}`);
+    link.setAttribute('href', `/edit.html#${item.id}`);
     //appending span
     div.appendChild(link);
 
