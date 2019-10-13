@@ -17,6 +17,7 @@ const saveNote = function(todo) {
 
 //remove todo by clicking on buttons
 let removeTodo = function(id) {
+    debugger;
     const removeIndex = todo.findIndex(function(item) {
         return item.id === id;
     });
@@ -58,6 +59,7 @@ const createElementDOM = function(item) {
 
     // 
     link.setAttribute('href', `/edit.html#${item.id}`);
+    link.setAttribute('target', '_blank');
     //appending span
     div.appendChild(link);
 
