@@ -33,4 +33,15 @@ document.querySelector('#todoForm').addEventListener('submit', function(e) {
 document.querySelector('#hideCompleted').addEventListener('change', function(e) {
     filter.hideCompleted = e.target.checked;
     renderTodos(todo, filter);
-})
+});
+
+//-------synching all data
+//this EventListener Is fireing Up just by other documents like: edit.js
+window.addEventListener('storage', function(e) {
+    this.console.log(e);
+
+    if (e.key === 'todos') {
+        todo = JSON.parse(e.newValue);
+        renderTodos(todo, filter);
+    }
+});

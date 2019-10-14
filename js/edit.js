@@ -5,8 +5,8 @@ const id = location.hash.substring(1);
 
 console.log(id);
 
-const todos = checkData();
-const todo = todos.find(function(item) {
+let todos = checkData();
+let todo = todos.find(function(item) {
     return item.id === id;
 });
 
@@ -14,7 +14,6 @@ if (todo === undefined) {
     location.assign('index.html');
 
 }
-console.log(todo);
 
 todoDone.checked = todo.done;
 todoBody.value = todo.body;
@@ -39,4 +38,27 @@ removeEl.addEventListener('click', function() {
     }
     saveNote(todos);
     location.assign('./index.html');
+})
+
+//window and syncing all data across all tabs
+
+window.addEventListener('storage', function(e) {
+    if (e.key === 'todos') {
+
+        todos = JSON.parse(e.newValue);
+        todo = todos.find(function(item) {
+            return item.id === id;
+        });
+
+        if (todo === undefined) {
+            location.assign('index.html');
+
+        }
+
+
+
+
+        todoDone.checked = todo.done;
+        todoBody.value = todo.body;
+    }
 })
