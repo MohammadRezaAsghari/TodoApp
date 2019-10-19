@@ -54,10 +54,6 @@ window.addEventListener('storage', function(e) {
             location.assign('index.html');
 
         }
-
-
-
-
         todoDone.checked = todo.done;
         todoBody.value = todo.body;
     }

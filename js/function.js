@@ -115,3 +115,8 @@ const renderTodos = function(todo, filter) {
         document.querySelector('#todo').appendChild(createElementDOM(item));
     });
 }
+
+//mess around with moment
+
+let now = moment();
+console.log(now.toString());
