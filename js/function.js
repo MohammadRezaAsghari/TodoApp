@@ -118,5 +118,4 @@ const renderTodos = function(todo, filter) {
 
 //mess around with moment
 
-let now = moment();
-console.log(now.toString());
+console.log(moment().isoWeekday('saturday'));

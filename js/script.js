@@ -45,3 +45,10 @@ window.addEventListener('storage', function(e) {
         renderTodos(todo, filter);
     }
 });
+
+
+// JavaScriot Dates
+
+let now = new Date();
+console.log(typeof now);
+console.log(now.getTime());
