@@ -31,9 +31,15 @@ let removeTodo = function(id) {
 //createElement
 const createElementDOM = function(item) {
     let div = document.createElement('div');
+    div.classList.add('bg-light');
+    div.classList.add('mt-2');
+
     let link = document.createElement('a');
 
     let button = document.createElement('button');
+    button.classList.add('btn');
+    button.classList.add('btn-danger');
+
 
     //creating and attaching eventListener to checkbox
     //EventListner is going to make todo.done true or false
@@ -71,6 +77,7 @@ const createElementDOM = function(item) {
         saveNote(todo);
         renderTodos(todo, filter);
     });
+
 
 
 

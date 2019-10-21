@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>this is edit page</title>
 </head>
 
 <body>
 
-    <input type="checkbox" id="todoDone">
-    <span class="editedTime"></span>
-    <textarea placeholder="Enter Your Todo body here" id="todoBody"></textarea>
-    <button type="button" id="removeItem">Remove</button>
+    <div class="container">
+        <input type="checkbox" id="todoDone">
+        <span class="editedTime lead"></span>
+        <textarea placeholder="Enter Your Todo body here" id="todoBody" class="form-control"></textarea>
+        <button type="button" id="removeItem" class="btn btn-danger">Remove</button>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
     <script src="js/function.js"></script>
