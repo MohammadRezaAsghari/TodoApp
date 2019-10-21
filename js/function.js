@@ -116,6 +116,8 @@ const renderTodos = function(todo, filter) {
     });
 }
 
-//mess around with moment
+// generate last edited message
 
-console.log(moment().isoWeekday('saturday'));
+const generateLastEditedMessage = function(timeStamp) {
+    return `Last Edited : ${moment(timeStamp).fromNow()}`;
+}

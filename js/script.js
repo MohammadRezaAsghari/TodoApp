@@ -20,8 +20,11 @@ document.querySelector('#search').addEventListener('input', function(event) {
 
 document.querySelector('#todoForm').addEventListener('submit', function(e) {
     let identifier = uuidv4();
+    let timeStamp = moment().valueOf();
     e.preventDefault();
     todo.push({
+        createdAt: timeStamp,
+        updatedAt: timeStamp,
         id: identifier,
         body: e.target.elements.firstName.value,
         done: false
@@ -45,10 +48,3 @@ window.addEventListener('storage', function(e) {
         renderTodos(todo, filter);
     }
 });
-
-
-// JavaScriot Dates
-
-let now = new Date();
-console.log(typeof now);
-console.log(now.getTime());

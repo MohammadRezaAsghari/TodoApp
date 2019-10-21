@@ -1,6 +1,7 @@
 const todoDone = document.querySelector('#todoDone');
 const todoBody = document.querySelector('#todoBody');
 const removeEl = document.querySelector('#removeItem');
+const editedEl = document.querySelector('.editedTime');
 const id = location.hash.substring(1);
 
 console.log(id);
@@ -17,13 +18,18 @@ if (todo === undefined) {
 
 todoDone.checked = todo.done;
 todoBody.value = todo.body;
+editedEl.textContent = generateLastEditedMessage(todo.updatedAt);
 
 todoBody.addEventListener('input', function(e) {
     todo.body = e.target.value;
+    todo.updatedAt = moment().valueOf();
+    editedEl.textContent = generateLastEditedMessage(todo.updatedAt);
     saveNote(todos);
 });
 todoDone.addEventListener('change', function(e) {
     todo.done = e.target.checked;
+    todo.updatedAt = moment().valueOf();
+    editedEl.textContent = generateLastEditedMessage(todo.updatedAt);
     saveNote(todos);
 });
 removeEl.addEventListener('click', function() {
@@ -56,5 +62,6 @@ window.addEventListener('storage', function(e) {
         }
         todoDone.checked = todo.done;
         todoBody.value = todo.body;
+        editedEl.textContent = generateLastEditedMessage(todo.updatedAt);
     }
 })
